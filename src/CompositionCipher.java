@@ -10,9 +10,7 @@ public class CompositionCipher extends Cipher {
     public CompositionCipher(CompositionCipher other) {
         ciphers = new ArrayList<>();
         for (int i = 0; i < other.ciphers.size(); i++) {
-            if (other.ciphers.get(i).getClass() == CaesarCipher.class) {
-
-            }
+            ciphers.add(other.ciphers.get(i).newCopy());
         }
     }
 
