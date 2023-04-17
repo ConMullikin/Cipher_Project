@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public abstract class Cipher {
 
     /**
@@ -18,12 +16,9 @@ public abstract class Cipher {
      * @return
      */
     public String encrypt(String s) {
-        Scanner scn = new Scanner(s);
         StringBuilder cipher = new StringBuilder();
-        scn.useDelimiter(".");
-
-        while (scn.hasNext()) {
-            cipher.append(encrypt(scn.next()));
+        for (int i = 0; i < s.length(); i++) {
+            cipher.append(encrypt(s.charAt(i)));
         }
         return cipher.toString();
     }
@@ -31,12 +26,9 @@ public abstract class Cipher {
     public abstract char decrypt(char c);
 
     public String decrypt(String s) {
-        Scanner scn = new Scanner(s);
         StringBuilder cipher = new StringBuilder();
-        scn.useDelimiter(".");
-
-        while (scn.hasNext()) {
-            cipher.append(decrypt(scn.next()));
+        for (int i = 0; i < s.length(); i++) {
+            cipher.append(decrypt(s.charAt(i)));
         }
         return cipher.toString();
     }
