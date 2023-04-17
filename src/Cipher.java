@@ -16,13 +16,13 @@ public abstract class Cipher {
 
     public abstract char decrypt(char c);
 
-    public String decrpyt(String s) {
+    public String decrypt(String s) {
         Scanner scn = new Scanner(s);
         StringBuilder cipher = new StringBuilder();
         scn.useDelimiter(".");
 
         while (scn.hasNext()) {
-            cipher.append(decrpyt(scn.next()));
+            cipher.append(decrypt(scn.next()));
         }
         return cipher.toString();
     }

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class VigenereCipher {
+public class VigenereCipher extends Cipher {
 	
 	private ArrayList<CaesarCipher> subCiphers;
 	
@@ -22,7 +22,13 @@ public class VigenereCipher {
 	}
 	
 	public VigenereCipher(VigenereCipher other){
-		// TODO: complete this copy constructor
+		this.nextIndexForEncrypt = other.nextIndexForEncrypt;
+		this.nextIndexForDecrypt = other.nextIndexForDecrypt;
+
+		subCiphers = new ArrayList<>();
+		for (CaesarCipher otherCiphers : other.subCiphers) {
+			subCiphers.add(otherCiphers);
+		}
 	}
 	
 	@Override
