@@ -25,9 +25,9 @@ public class VigenereCipher extends Cipher {
 		this.nextIndexForEncrypt = other.nextIndexForEncrypt;
 		this.nextIndexForDecrypt = other.nextIndexForDecrypt;
 
-		subCiphers = new ArrayList<>();
-		for (CaesarCipher otherCiphers : other.subCiphers) {
-			subCiphers.add(otherCiphers);
+		this.subCiphers = new ArrayList<>();
+		for (CaesarCipher otherCipher : other.subCiphers) {
+			this.subCiphers.add(new CaesarCipher(otherCipher));
 		}
 	}
 	
