@@ -52,7 +52,7 @@ public abstract class Cipher {
     /**
      * An abstract method whose purpose in each child class is to create a new Cipher copy of the given Object
      * type
-     * @return is a general Cipher (which can be of any type of the inherited child classes)
+     * @return is a general Cipher (which can be of any type from the inherited child classes)
      */
     public abstract Cipher newCopy();
 }
