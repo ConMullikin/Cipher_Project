@@ -22,9 +22,10 @@ public class CompositionCipher extends Cipher {
      * @param other
      */
     public CompositionCipher(CompositionCipher other) {
-        ciphers = new ArrayList<>();
-        for (int i = 0; i < other.ciphers.size(); i++) {
-            ciphers.add(other.ciphers.get(i).newCopy());
+        this.ciphers = new ArrayList<>();
+
+        for (Cipher iterateCiphers : other.ciphers) {
+            this.ciphers.add(iterateCiphers.newCopy());
         }
     }
 
